@@ -1,0 +1,68 @@
+---
+title: "Discussion 11"
+author: "Coco Donovan"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Scenario Design:
+
+1. The targeted users are the paying NYT subscribers or even the people who have 
+their email linked (so that the NYT can drum up patronage).
+
+2. The goal of the NYT's recommender system is to curate personalized content 
+for its users in a way the 1. retains subscribership and 2. maximizes engagement
+with its subcribership.
+
+3. Maybe this is something that NYT already considers, but I did not hear 
+anything about regionalized content. Maybe that regional-specific content 
+consideration is less important, but I think it might be important to send 
+subscribers regionally-relevant information. I say this because frequently 
+websites will ask if they can have access to your location (and as someone who
+does not read the NYT, I suspect the NYT asks for it as well). Maybe this would 
+be less reliable as most people, including myself, opt for the no-location-
+tracking option. However, this may be a useful bit of data to leverage, if it is
+not covered through connections made to "similar users." (Though I do not know 
+how VPNs may impact location accuracy)
+
+## Reverse Engineering:
+
+My first thought as I was reading this article is that the topic analysis seems
+a lot like the work we did for our third project and the work that was supposed
+to be done for the sentiment analysis project (admittedly, I did not do that 
+work). So, I believe what happens is that likely folks at the NYT identify 
+articles that qualitatively focus on a certain topic (or multiple topics) and 
+then feed those articles through some sort of text-analysis process that
+identifies key/important words that occur across the topic (signifying that a
+certain word may be associated with a topic). Not all words share equal significance 
+within a topic and that would most likely be accounted for with some sort of 
+rating system. All this happens separately from users interacting with the articles.
+
+Then the NYT waits for a user to interact with articles. Once a user begins 
+clicking on articles, NYT can start recommending. Through the beginning of a 
+subscriber's patronage, this model would rely more on a users pre-existing 
+interest than the recommender system (the same-sex vs heterosexual wedding example).
+However, once the NYT's system has a pretty good idea what their users intial 
+interests are, then they can begin being recommended articles based on their own
+preferences and the preferences of users similar to them. So, if you express a 
+decent interest in the Environment, the NYT recommender system will look at other
+users' interests who also show interest in the environment, which may lead you to 
+getting recommendations along the lines of politics or science (just as an example).
+
+According to "Article 1" NYT has no way of officially knowing whether or not a 
+user actually read the article (they can see that a user clicked on an article
+and they can see the scroll depth, but they cannot assess with 100% accuracy if 
+the article was read). So this is another component that must work it's way into
+the model.
+
+Article 1 = https://knightlab.northwestern.edu/2016/03/28/a-quick-look-at-recommendation-engines-and-how-the-new-york-times-makes-recommendations/#:~:text=They%20use%20the%20simple%20method,decide%20what%20your%20interests%20are.
+
+
+## Further Recommendations:
+
+I think that utilizing volunteered location may be helpful, but beyond that I 
+cannot think of any further recommendations.
